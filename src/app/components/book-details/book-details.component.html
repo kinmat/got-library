@@ -1,0 +1,44 @@
+<mat-card class="p-5">
+  <h1>{{ book.name }}</h1>
+  <p>{{ book.url }}</p>
+  <table class="table font-white">
+    <tbody>
+      <tr>
+        <td>ISBN:</td>
+        <td>{{ book.isbn }}</td>
+      </tr>
+      <tr>
+        <td>Authors:</td>
+        <td><p *ngFor="let item of book.authors">{{item}}</p></td>
+      </tr>
+      <tr>
+        <td>Number of pages:</td>
+        <td>{{ book.numberOfPages }}</td>
+      </tr>
+      <tr>
+        <td>Publisher:</td>
+        <td>{{ book.publisher }}</td>
+      </tr>
+      <tr>
+        <td>Country:</td>
+        <td>{{ book.country }}</td>
+      </tr>
+      <tr>
+        <td>Media Type:</td>
+        <td>{{ book.mediaType }}</td>
+      </tr>
+      <tr>
+        <td>Released:</td>
+        <td>{{ book.released }}</td>
+      </tr>
+      <tr>
+        <td>Characters: </td>
+        <td><a href="javascript:;" (click)="charUrlClicked(item)" *ngFor="let item of book.characters">{{item}}<br></a></td>
+    </tr>
+    <tr>
+        <td>POV Characters: </td>
+        <td><a href="javascript:;" (click)="charUrlClicked(item)" *ngFor="let item of book.povCharacters">{{item}}<br></a></td>
+    </tr>
+    </tbody>
+  </table>
+</mat-card>

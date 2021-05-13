@@ -1,0 +1,46 @@
+<app-search (sParams)="getParams($event)"></app-search>
+<mat-toolbar color="accent" class="toolbar rounded">
+    <span>Pages</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="clickLeft()" [disabled]="!leftClickable">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <button mat-icon-button (click)="clickRight()" [disabled]="!rightClickable">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <span>page # {{currentPage}}</span>
+  </mat-toolbar>
+
+<div *ngIf="resultParams.type=='Character'">
+  <mat-card  class="mt-2" *ngFor="let item of chars">
+  <mat-card-title>{{ item.name }}</mat-card-title>
+  <mat-card-content>{{ item.url }}</mat-card-content>
+  <mat-card-actions>
+    <button (click)="onDetailsClick(item.url)" mat-button>DETAILS</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+
+
+<div *ngIf="resultParams.type=='Book'">
+<mat-card  class="mt-2" *ngFor="let item of books">
+  <mat-card-title>{{ item.name }}</mat-card-title>
+  <mat-card-content>{{ item.url }}</mat-card-content>
+  <mat-card-actions>
+    <button (click)="onDetailsClick(item.url)" mat-button>DETAILS</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+
+
+<div *ngIf="resultParams.type=='House'">
+  <mat-card  class="mt-2" *ngFor="let item of houses">
+    <mat-card-title>{{ item.name }}</mat-card-title>
+    <mat-card-content>{{ item.url }}</mat-card-content>
+    <mat-card-actions>
+      <button (click)="onDetailsClick(item.url)" mat-button>DETAILS</button>
+    </mat-card-actions>
+  </mat-card>
+  </div>
+

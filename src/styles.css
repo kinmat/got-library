@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+html, body { height: 100%; }
+body { margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+.outer {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+}
+.example-container {
+    flex-grow : 1;
+}
+
+.main-content {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    font-size: 12px
+}
+
+:host ::ng-deep .mat-form-field-wrapper{
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  .font-white {
+    color: white;
+}

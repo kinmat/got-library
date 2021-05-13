@@ -1,0 +1,70 @@
+<mat-card class="p-5 width-custom">
+    <h1>
+      {{ house.name }}
+    </h1>
+    <p>   {{ house.url }}  </p>
+    <table class="table font-white">
+      <tbody>
+          <tr>
+              <td>Region</td>
+              <td>{{house.region}}</td>
+          </tr>
+          <tr>
+            <td>Coat of Arms</td>
+            <td>{{house.coatOfArms}}</td>
+        </tr>
+        <tr>
+            <td>Words</td>
+            <td>{{house.words}}</td>
+        </tr>
+        <tr>
+            <td>Titles: </td>
+            <td><p *ngFor="let title of house.titles">{{title}}</p></td>
+        </tr>
+        <tr>
+            <td>Seats: </td>
+            <td><p *ngFor="let seat of house.seats">{{seat}}</p></td>
+        </tr>
+        <tr>
+            <td>Current Lord: </td>
+            <td><a  href="javascript:;" (click)="charUrlClicked(house.currentLord)">{{house.currentLord}}</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Heir: </td>
+            <td><a  href="javascript:;" (click)="charUrlClicked(house.heir)">{{house.heir}}</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Overlord: </td>
+            <td><a  href="javascript:;" (click)="charUrlClicked(house.overlord)">{{house.overlord}}</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Founded</td>
+            <td>{{house.founded}}</td>
+        </tr>
+        <tr>
+            <td>Founder: </td>
+            <td><a  href="javascript:;" (click)="charUrlClicked(house.founder)">{{house.founder}}</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Died out: </td>
+            <td>{{house.diedOut}} </td>
+        </tr>
+        <tr>
+            <td>Ancestral weapons: </td>
+            <td><p *ngFor="let item of house.ancestralWeapons">{{item}}</p></td>
+        </tr>
+        <tr>
+            <td>Cadet Branches: </td>
+            <td><a href="javascript:;" (click)="houseUrlClicked(item)" *ngFor="let item of house.cadetBranches">{{item}}<br></a></td>
+        </tr>
+        <tr>
+            <td>Sworn members: </td>
+            <td><a href="javascript:;" (click)="charUrlClicked(item)" *ngFor="let item of house.swornMembers">{{item}}<br></a></td>
+        </tr>
+      </tbody>
+    </table>
+</mat-card>

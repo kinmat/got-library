@@ -1,0 +1,67 @@
+<mat-card class="p-5 width-custom">
+  <h1>
+    {{ char.name }}
+  </h1>
+  <p>   {{ char.url }}  </p>
+  <table class="table font-white">
+    <tbody>
+        <tr>
+            <td>Gender: </td>
+            <td>{{char.gender}}</td>
+        </tr>
+        <tr>
+            <td>Culture: </td>
+            <td>{{char.culture}}</td>
+        </tr>
+        <tr>
+            <td>Born: </td>
+            <td>{{char.born}}</td>
+        </tr>
+        <tr>
+            <td>Died: </td>
+            <td>{{char.died}}</td>
+        </tr>
+        <tr>
+            <td>Titles: </td>
+            <td><p *ngFor="let title of char.titles">{{title}}</p></td>
+        </tr>
+        <tr>
+            <td>Aliases: </td>
+            <td><p *ngFor="let alias of char.aliases">{{alias}}</p></td>
+        </tr>
+        <tr>
+            <td>Father: </td>
+            <td><a  href="javascript:;" (click)="charUrlClicked(char.father)">{{char.father}}</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Mother: </td>
+            <td><a href="javascript:;" (click)="charUrlClicked(char.mother)">{{char.mother}}</a>
+        </tr>
+        <tr>
+            <td>Spouse: </td>
+            <td><a href="javascript:;" (click)="charUrlClicked(char.spouse)">{{char.spouse}}</a>
+        </tr>
+        <tr>
+            <td>Allegiances: </td>
+            <td><a href="javascript:;" (click)="houseUrlClicked(item)" *ngFor="let item of char.allegiances">{{item}}<br></a></td>
+        </tr>
+        <tr>
+            <td>Books: </td>
+            <td><a href="javascript:;" (click)="bookUrlClicked(item)" *ngFor="let item of char.books">{{item}}<br></a></td>
+        </tr>
+        <tr>
+            <td>povBooks: </td>
+            <td><a href="javascript:;" (click)="bookUrlClicked(item)" *ngFor="let item of char.povBooks">{{item}}<br></a></td>
+        </tr>
+        <tr>
+            <td>Appeared in TV Series: </td>
+            <td><p *ngFor="let item of char.tvSeries">{{item}}</p></td>
+        </tr>
+        <tr>
+            <td>Played by: </td>
+            <td><p *ngFor="let item of char.playedBy">{{item}}</p></td>
+        </tr>
+    </tbody>
+  </table>
+</mat-card>
